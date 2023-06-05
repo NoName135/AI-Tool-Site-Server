@@ -9,35 +9,37 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
-<body class="body">
+<body>
   <form action="/" method="post">
     <div class="card">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/800px-International_Pok%C3%A9mon_logo.svg.png"
-        alt="pokemon_logo" class="card-img">
-      <h1 class="card-title">寶可夢屬性、種族值查詢 (AI不太準確)</h1>
-      <p class="card-text">
-        <% if (description.length) { %>
-          屬性：<%= description[0].split('，')[0] %><br>
-          HP：<%= description[0].split('，')[1].split('/')[0] %><br>
-          攻擊：<%= description[0].split('，')[1].split('/')[1] %><br>
-          防禦：<%= description[0].split('，')[1].split('/')[2] %><br>
-          特攻：<%= description[0].split('，')[1].split('/')[3] %><br>
-          特防：<%= description[0].split('，')[1].split('/')[4] %><br>
-          速度：<%= description[0].split('，')[1].split('/')[5] %><br>
-          <span class="card-comment">※被剋制：<%= description[0].split('，')[2] %></span>
-        <% } else { %>
-          屬性：?<br>
-          HP：?<br>
-          攻擊：?<br>
-          防禦：?<br>
-          特攻：?<br>
-          特防：?<br>
-          速度：?<br>
-        <% } %>
-      </p>
-      <input type="text" name="description" class="card-input" placeholder="請輸入寶可夢名稱" />
-      <button type="submit" class="card-btn">送出</button>
+      <div class="content">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/800px-International_Pok%C3%A9mon_logo.svg.png"
+          alt="pokemon_logo" class="card-img">
+        <h1 class="card-title">寶可夢屬性、種族值查詢<br>(AI不太準確)</h1>
+        <p class="card-text">
+          <% if (description.length) { %>
+            屬性：<%= description[0].split('，')[0] %><br>
+            HP：<%= description[0].split('，')[1].split('/')[0] %><br>
+            攻擊：<%= description[0].split('，')[1].split('/')[1] %><br>
+            防禦：<%= description[0].split('，')[1].split('/')[2] %><br>
+            特攻：<%= description[0].split('，')[1].split('/')[3] %><br>
+            特防：<%= description[0].split('，')[1].split('/')[4] %><br>
+            速度：<%= description[0].split('，')[1].split('/')[5] %><br>
+            <span class="card-comment">※被剋制：<%= description[0].split('，')[2] %></span>
+          <% } else { %>
+            屬性：?<br>
+            HP：?<br>
+            攻擊：?<br>
+            防禦：?<br>
+            特攻：?<br>
+            特防：?<br>
+            速度：?<br>
+          <% } %>
+        </p>
+        <input type="text" name="description" class="card-input" placeholder="請輸入寶可夢名稱" />
+        <button type="submit" class="card-btn">送出</button>
+      </div>
     </div>
   </form>
 </body>

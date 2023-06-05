@@ -3,13 +3,13 @@
 }
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: black;
+  background: center / cover no-repeat url("../images/background.jpg");
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height:100vh;
+  height: 100vh;
 }
 
 ::placeholder {
@@ -17,10 +17,24 @@ body {
 }
 
 .card {
-  border: 1px solid #1b1b1b;
+  position: relative;
+  background: center / cover no-repeat url("../images/main.jpg");
+  border: 3px solid #ffce45;
   border-radius: 16px;
-  background-color: #222222;
-  padding: 32px 24px; 
+  padding: 32px 24px;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 16px;
+}
+.card .content {
+  position: relative;
 }
 .card-img {
   width: 150px;
